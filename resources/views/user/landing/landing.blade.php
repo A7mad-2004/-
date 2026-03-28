@@ -1,7 +1,11 @@
 
 @extends('user.layout.app')
 @section('content')
+<<<<<<< HEAD
     <div class="fixd">
+=======
+ <div class="fixd">
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
         <h1>+</h1>
     </div>
     <!-- start header -->
@@ -42,7 +46,11 @@
         <div class="p">
 
 
+<<<<<<< HEAD
             <p><a href="#">Qatar 323 <br> </a></p>
+=======
+            <p><a href="#">Qatar <br> </a></p>
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
             <p><a href="#">Turkish <br> Airlins</a></p>
             <p><a href="#">Etihad <br> Ariways</a></p>
             <p> <a href="#">Etihad <br> Ariways</a></p>
@@ -55,7 +63,11 @@
 
     <div class="sic4">
         <div class="title">
+<<<<<<< HEAD
             <h5>the best journeys with us</h5>
+=======
+            <h5>Explore the best journeys with us</h5>
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
             <span></span>
         </div>
         <div class="contaier4">
@@ -118,6 +130,7 @@
         </div>
         <div class="container3">
             <div class="card">
+<<<<<<< HEAD
                 @foreach($trips as $trip)
                     <div class="card1 margin">
                         <img src="{{ $trip->destination->image_url }}" alt="">
@@ -145,6 +158,9 @@
                     </div>
                 @endforeach
                 <!-- <div class="card1 margin">
+=======
+                <div class="card1 margin">
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
                     <img src="../img/اسبانيا.webp" alt="">
                     <div class="cont-card">
                         <h4>ispan</h4>
@@ -284,7 +300,11 @@
                         <p class="cont-card-pp">TDiscover the splendor of Italy and the magic of its timeless cities.
                         </p>
                     </div>
+<<<<<<< HEAD
                     <div class="info">fff
+=======
+                    <div class="info">
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
 
                         <div class="price">
                             <h4>price</h4>
@@ -531,6 +551,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 -->
             </div>
 
@@ -610,12 +631,148 @@
 
                     </div>
 
+=======
+
+    </div>
+
+    </div>
+
+    <!-- End sicstion 3 -->
+    <!--Staart siscyoin 5 -->
+    <div class="sic5">
+        <div class="title">
+            <h5>Type of Travel</h5>
+            <span></span>
+        </div>
+        <div class="cards">
+            <div class="cards1">
+                <div class="title">
+                    <h1>Hajj and Umrah trips</h1>
+                    <p>Organizing Hajj and Umrah trips with exceptional service standards</p>
+                </div>
+                <div class="Trip">
+                    <div class="title">
+                        <h1>Trip Advantages</h1>
+                    </div>
+                    <div class="Advantages">
+                        <p>1. Fun activities for children</p>
+                        <p>2. Entertainment for the whole building</p>
+                        <p>3. Comfortable and organized schedule</p>
+                        <p>5. star hotel bookings</p>
+                    </div>
+                    <div class="explor">
+                        <a href="#">Explore Further</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="cards1">
+                <div class="title">
+                    <h1>Journeys Trips</h1>
+                    <p>Perfect trips that combine fun and comfort</p>
+
+                </div>
+                <div class="Trip">
+                    <div class="title">
+                        <h1>Trip Advantages</h1>
+                    </div>
+                    <div class="Advantages">
+                        <p>1. Fun activities for children</p>
+                        <p>2. Entertainment for the whole building</p>
+                        <p>3. Comfortable and organized schedule</p>
+                        <p>5. star hotel bookings</p>
+                    </div>
+                    <div class="explor">
+                        <a href="#">Explore Further</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="cards1">
+                <div class="title">
+                    <h1>Trips VIP</h1>
+                    <p>Perfect trips that combine fun and comfort</p>
+
+                </div>
+                <div class="Trip">
+                    <div class="title">
+                        <h1>Trip Advantages</h1>
+                    </div>
+                    <div class="Advantages">
+                        <p>1. Fun activities for children</p>
+                        <p>2. Entertainment for the whole building</p>
+                        <p>3. Comfortable and organized schedule</p>
+                        <p>5. star hotel bookings</p>
+                    </div>
+                    <div class="explor">
+                        <a href="#">Explore Further</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--end siscyoin 5 -->
+    <!-- start siction 6 -->
+    <div class="sic6">
+        <div class="title">
+            <h5>Type of Travel</h5>
+            <span></span>
+        </div>
+        <div class="card6">
+            <div class="card6_1">
+                <img src="../img/الكعبة.webp" alt="">
+                <div class="cont_title">
+                    <h5>Dobai</h5>
+                </div>
+                <div class="info6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repudiandae officia esse,
+                        voluptates voluptas iusto a alias optio consequuntur est! Facere dignissimos dolorem iure
+                        voluptate atque <span> <a href="#">Explore Further</a> </span>
+                    </p>
+                </div>
+
+
+            </div>
+            <div class="card6_1">
+                <img src="../img/دبي.webp" alt="">
+                <div class="cont_title">
+                    <h5>Dobai</h5>
+                </div>
+                <div class="info6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repudiandae officia esse,
+                        voluptates voluptas iusto a alias optio consequuntur est! Facere dignissimos dolorem iure
+                        voluptate atque <span> <a href="#">Explore Further</a> </span>
+                    </p>
+                </div>
+
+
+            </div>
+            <div class="card6_1">
+                <img src="../img/برج ايفل.webp" alt="">
+                <div class="cont_title">
+                    <h5>Dobai</h5>
+                </div>
+                <div class="info6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repudiandae officia esse,
+                        voluptates voluptas iusto a alias optio consequuntur est! Facere dignissimos dolorem iure
+                        voluptate atque <span> <a href="#">Explore Further</a> </span>
+                    </p>
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
                 </div>
 
 
             </div>
 
         </div>
+<<<<<<< HEAD
 
 
         <!--end siscyoin 5 -->
@@ -677,10 +834,76 @@
 
         <!-- srart siction 7 -->
         <div class="sic7">
+=======
+    </div>
+
+    <!-- end siction 6 -->
+
+
+    <!-- srart siction 7 -->
+    <div class="sic7">
+        <div class="title">
+            <h5>Find your travel route</h5>
+            <span></span>
+        </div>
+        <div class="route">
+            <div class="route_1">
+                <div class="circle" id="t-l">
+                    <p>1</p>
+                </div>
+                <div class="cont_7">
+                    <p>Book your trip from home in <br><span>the easiest way</span></p>
+                </div>
+
+            </div>
+            <div class="route_1">
+                <div class="cont_7">
+                    <p>The bus comes to <span>your doorstep</span> <br> picks you and your luggage <br> up while you
+                        relax</p>
+                </div>
+                <div class="circle" id="t-r">
+                    <p>2</p>
+                </div>
+
+
+            </div>
+            <div class="route_1">
+                <div class="circle" id="b-l">
+                    <p>3</p>
+                </div>
+                <div class="cont_7">
+                    <p>You board the plane you chose And you <br> <span>sit in the seat</span> of your choice.</p>
+                </div>
+
+            </div>
+            <div class="route_1">
+                <div class="cont_7">
+                    <p>You check int the hotel<br> you chose and the porter <br> <span> carries your bags</span> while
+                        you relax</p>
+                </div>
+                <div class="circle" id="b-r">
+                    <p>4</p>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <!-- end siction 7 -->
+
+    <!-- srart siction 8 -->
+    <div class="sic8">
+        <div class="center">
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
             <div class="title">
                 <h5>Find your travel route</h5>
                 <span></span>
             </div>
+<<<<<<< HEAD
             <div class="route">
                 <div class="route_1">
                     <div class="circle" id="t-l">
@@ -761,12 +984,43 @@
                         <div class="cont8">
                             <h1>www</h1>
                         </div>
+=======
+            <div class="icon">
+                <div class="icon1">
+                    <img src="../img/24-hours-support_white.png" alt="">
+                    <div class="cont8">
+                        <h1>wwww</h1>
+                    </div>
+                </div>
+                <div class="icon1">
+                    <img src="../img/برامج.png" alt="">
+                    <div class="cont8">
+                        <h1>wwww</h1>
+                    </div>
+                </div>
+                <div class="icon1">
+                    <img src="../img/hotel_colored_white.png" alt="">
+                    <div class="cont8">
+                        <h1>wwww</h1>
+                    </div>
+                </div>
+                <div class="icon1">
+                    <img src="../img/حجوزات.png" alt="">
+                    <div class="cont8">
+                        <h1>www</h1>
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <!-- end siction 8 -->
         <!-- End landing -->
+=======
+    </div>
+    <!-- end siction 8 -->
+    <!-- End landing -->
+>>>>>>> 9730943860d56ac4b5401ac406da0c7d87b8463c
 
 @endsection
 

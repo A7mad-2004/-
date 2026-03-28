@@ -3,13 +3,14 @@
 use App\Http\Controllers\Auth\authController;
 use App\Http\Controllers\destination\destinationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\user\usercontroller;
+use App\Http\Controllers\dashboard\dashboardController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('landing',function(){
-   return view('user.landing.landing');
-})->name('landing');
+
 
 
 
@@ -67,6 +68,6 @@ Route::get('login', function(){
 })->name('login');
 ////////////// admin //////////////
 
-Route::get('dashboard',[\App\Http\Controllers\dashboard\dashboardController::class,'index'])->name('dashboard');
-
-
+Route::get('dashboard',[dashboardController::class,'index'])->name('dashboard');
+///////////////// user //////////////
+Route::get('landing',[usercontroller::class,'landing'])->name('landing');

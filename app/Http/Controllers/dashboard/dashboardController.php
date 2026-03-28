@@ -8,6 +8,8 @@ use App\Models\Trip;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
+
 class dashboardController extends Controller
 {
     public function index()

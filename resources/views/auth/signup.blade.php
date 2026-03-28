@@ -31,16 +31,17 @@
                             <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
 
                         </div>
-                        @error('password')
-                        <div class="alert alert-danger">
-                            is not match
-                        </div>
-                        @enderror
+                       
 
                         <div class="form-group">
                             <label for="password_confirmation"><i class="fas fa-lock"></i>Password Confirmation</label>
                             <input type="password" id= "password_confirmation" name="password_confirmation" class="form-control" placeholder="Password Confirmation" required>
                         </div>
+                        @error('password')
+                        <div class="alert alert-danger">
+                            is not match
+                        </div>
+                        @enderror
 
 
 

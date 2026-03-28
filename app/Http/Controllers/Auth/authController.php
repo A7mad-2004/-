@@ -21,24 +21,32 @@ class authController extends Controller
             'password' => 'required|string'
         ]);
         $remember = $request->boolean('remember');
-             if (Auth::attempt(['email' => $data['email'], 'password' => $data['password'],'role'=>'admin'],$remember))
-             {
-                 $request->session()->regenerate();
-                 return redirect()->route('dashboard');
 
-             }elseif (Auth::attempt(['email' => $data['email'], 'password' => $data['password'],'role'=>'user'],$remember))
-             {
-                 $request->session()->regenerate();
-                 return redirect()->route('landing');
+        if (! Auth::attempt([
+            'email' => $data['email'],
+            'password' => $data['password'],
+        ], $remember)) {
+            return back()->with('error', true);
+        }
 
-             }else
-             {
-                 $status = true;
-                 return back()->with(['error'=>$status]);
-             }
+        $request->session()->regenerate();
 
-
+        return match (Auth::user()->role) {
+            'admin' => redirect()->route('dashboard'),
+            'user' => redirect()->route('landing'),
+            default => $this->logoutUnexpectedRole($request),
+        };
     }
+
+    private function logoutUnexpectedRole(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return back()->with('error', true);
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();

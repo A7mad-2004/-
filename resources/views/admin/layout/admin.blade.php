@@ -142,7 +142,7 @@
             <i class="fas fa-tachometer-alt"></i> Dashboard
         </a>
 
-        <a class="nav-link" href="{{route('trips')}}">
+        <a class="nav-link" href="{{route('trips.index')}}">
             <i class="fas fa-suitcase-rolling"></i> Trips Management
         </a>
 

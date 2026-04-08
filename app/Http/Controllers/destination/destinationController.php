@@ -11,6 +11,7 @@ class destinationController extends Controller
     //
     public function index()
     {
+        
         $destinations = destination::paginate(6);
         return view('admin.destinations.index',compact('destinations'));
 
@@ -27,20 +28,20 @@ class destinationController extends Controller
             'country' => 'required',
             'city' => 'required',
             'description' => 'required',
-            'destination_image'=> 'required|image|max:2048',
+            'destination_image'=> 'required|file|max:2048',
             'is_active' => 'nullable',
         ]);
-        image_upload($date['destination_image'],'destination');
+        $imagePath = image_upload($date['destination_image'], 'destination');
         // check is active or not
           $is_active = $request->input('is_active') ?true : false;
 
           /// add new destination
-          $Destination =new destination();
+          $Destination = new destination();
           $Destination->name = $date['name'];
           $Destination->cuntry = $date['country'];
           $Destination->city = $date['city'];
           $Destination->description = $date['description'];
-          $Destination->image = image_upload($date['destination_image'],'destination');
+          $Destination->image = $imagePath;
           $Destination->is_active = $is_active;
           $Destination->save();
           return redirect()->route('destinations.index')->with('success','Destination created successfully');
@@ -49,7 +50,7 @@ class destinationController extends Controller
     }
     public function show($id)
     {
-          $destination = Destination::query()->find($id);
+          $destination = Destination::query()->find($id)->with('trips')->first();
         return view('admin.destinations.show',compact('destination'));
 
     }
@@ -96,6 +97,14 @@ class destinationController extends Controller
         ]);
 
         return redirect()->route('destinations.index')->with('success', 'Destination updated successfully');
+    }
+    public function toggleStatus($id)
+    {
+        $destination = Destination::findOrFail($id);
+        $destination->is_active = !$destination->is_active;
+        $destination->save();
+
+        return redirect()->route('destinations.show', $destination->id)->with('success', 'Destination status toggled successfully');
     }
     public function destroy($id)
     {

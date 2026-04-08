@@ -5,10 +5,18 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('destinations.index') }}">Destinations</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ $destination->cuntry }} - {{ $destination->city }}</li>
+    <li class="breadcrumb-item active" aria-current="page">{{ $destination->country }} - {{ $destination->city }}</li>
 @endsection
 
 @section('content')
+
+    @if(session('success'))
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            {{ session('success') }}
+        </div>
+    @endif
+    
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -111,15 +119,17 @@
                             <div class="col-12">
                                 <div class="p-3 rounded border bg-light d-flex align-items-center justify-content-between">
                                     <div>
-                                        <div class="text-muted small">
-                                            <i class="fas fa-toggle-on text-primary"></i> Status
-                                        </div>
-                                        <div class="fw-semibold">
-                                            {{ $destination->is_active ? 'Active' : 'Not Active' }}
-                                        </div>
+                                        @if($destination->is_active)
+                                            <i class="fas fa-toggle-on text-success"></i>Status
+                                            <p>Active</p>
+                                        @else
+                                            <i class="fas fa-toggle-off text-secondary"></i>Status
+                                            <p>Inactive</p>
+                                        @endif
+                                        
                                     </div>
 {{--                                      js--}}
-                                    <form action="" method="POST">
+                                    <form action="{{ route('destinations.toggle-status', $destination->id) }}" method="POST">
                                         @csrf
                                         <button class="btn btn-admin">
                                             <i class="fas fa-repeat"></i> Toggle Status

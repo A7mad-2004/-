@@ -7,13 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
+
 
 class Trip extends Model
 {
     //
-
-    use HasFactory;
+     use HasFactory;
     use SoftDeletes;
+
+    protected $fillable = [
+        'destination_id',
+        'title',
+        'summary',
+        'days',
+        'price',
+        'capacity',
+        'start_date',
+        'end_daet',
+        'image',
+        'status',
+        'Child',
+        'Adults',
+    ];
+
+   
 
     public function destination(): BelongsTo
     {
@@ -22,6 +40,10 @@ class Trip extends Model
     public function bookings(): HasMany
     {
         return $this->hasMany(Booking::class);
+    }
+     public function getImageUrlAttribute()
+    {
+        return Storage::disk('trip')->url($this->image);
     }
 
 }

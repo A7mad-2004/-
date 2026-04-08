@@ -5,7 +5,8 @@ use App\Http\Controllers\destination\destinationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\usercontroller;
 use App\Http\Controllers\dashboard\dashboardController;
-
+use App\Http\Controllers\Admin\Trip\tripcontrol;
+use App\Http\Controllers\Trip\tripController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,18 +17,17 @@ Route::get('/', function () {
 
 
  ////////////// trips ////////////
-Route::get('trips', function(){
-    return view('admin.trips.index');
-})->name('trips');
-Route::get('trip/create', function(){
-    return view('admin.trips.create');
-})->name('trip.create');
-Route::get('trip/{id}/edit', function(){
-    return view('admin.trips.edit');
-})->name('trip.edit');
-Route::get('trip/{id}/show', function(){
-    return view('admin.trips.show');
-})->name('trip.show');
+Route::resource('trips', tripController::class);
+// Route::get('trips', [tripController::class,'index'])->name('trips.index');
+// Route::get('trips/create', [tripController::class,'create'])->name('trips.create');
+// Route::post('trips', [tripController::class,'store'])->name('trips.store');
+// Route::get('trips/{id}/show', [tripController::class,'show'])->name('trips.show');
+// Route::get('trips/{id}/edit', [tripController::class,'edit'])->name('trips.edit');
+// Route::put('trips/{id}/update', [tripController::class,'update'])->name('trips.update'); 
+
+
+
+
 
 
 
@@ -43,6 +43,8 @@ Route::get('booking/show', function(){
 
 ///////////////////// destinations /////////////
 Route::resource('destinations',destinationController::class);
+Route::post('destinations/{id}/toggle-status', [destinationController::class, 'toggleStatus'])->name('destinations.toggle-status');
+//Route::get('destinations', [destinationController::class,'index'])->name('destinations.index');
 //Route::get('destinations/create', [destinationController::class,'create'])->name('destination/create');
 //Route::post('destinations', [destinationController::class,'store'])->name('destination.store');
 //Route::get('destination/{id}/show', [destinationController::class,'show'])->name('destination.show');
@@ -71,3 +73,4 @@ Route::get('login', function(){
 Route::get('dashboard',[dashboardController::class,'index'])->name('dashboard');
 ///////////////// user //////////////
 Route::get('landing',[usercontroller::class,'landing'])->name('landing');
+Route::get('booking',[usercontroller::class,'booking'])->name('booking');

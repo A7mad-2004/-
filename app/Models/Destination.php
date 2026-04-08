@@ -32,6 +32,5 @@ class Destination extends Model
     public function getImageUrlAttribute()
     {
         return Storage::disk('destination')->url($this->image);
-
     }
 }

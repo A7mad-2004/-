@@ -14,7 +14,6 @@ class Booking extends Model
     use softDeletes;
 
     public function user(): BelongsTo
-
     {
        return $this->belongsTo(User::class);
     }
